@@ -1,0 +1,8 @@
+# HTTPS automático (Let's Encrypt). DOMAIN puede ser un dominio propio
+# o un nombre sslip.io, p. ej. 15-235-108-86.sslip.io
+{$DOMAIN} {
+	encode zstd gzip
+	header Strict-Transport-Security "max-age=31536000"
+	reverse_proxy nginx:80
+}
+
